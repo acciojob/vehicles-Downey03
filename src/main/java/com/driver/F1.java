@@ -22,6 +22,7 @@ public class F1 extends Car {
          */
 
         if(newSpeed == 0) {
+            stop();
             setGears(1);
         }
         //for all other cases, change the gear accordingly
@@ -34,8 +35,9 @@ public class F1 extends Car {
             if(getCurrentSpeed()>150 && getCurrentSpeed()<=200) setGears(4);
             if(getCurrentSpeed()>200 && getCurrentSpeed()<=250) setGears(5);
             if( getCurrentSpeed()<250) setGears(6);
+            changeSpeed(newSpeed, getCurrentDirection());
         }
-        changeSpeed(newSpeed, getCurrentDirection());
+
 
     }
 }
